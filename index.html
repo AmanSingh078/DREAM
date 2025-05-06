@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gift Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+  <style>
+    ::-webkit-scrollbar {
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #f472b6;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 to-white font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="relative bg-gradient-to-r from-pink-600 via-pink-400 to-pink-300 text-white py-12 shadow-2xl rounded-b-3xl">
+    <!-- Background Video -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0 opacity-50">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="relative z-10">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-shadow-lg animate__animated animate__fadeInUp">🎁 Welcome To Dream Store</h1>
+      <p class="text-center mt-4 text-lg sm:text-xl font-medium text-opacity-80 animate__animated animate__fadeInUp animate__delay-1s">Find the perfect gift for every occasion</p>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id="hero-section" class="relative text-center py-16 px-6 md:px-12 bg-gradient-to-tl from-white via-pink-100 to-pink-50 rounded-xl shadow-xl">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 animate__animated animate__fadeInUp">Make Someone Smile Today 😊</h2>
+    <p class="text-white font-bold mb-8 max-w-3xl mx-auto text-base sm:text-lg animate__animated animate__fadeInUp animate__delay-2s">
+      Discover our beautifully curated collection of gifts crafted to make every celebration unforgettable. Whether it’s a birthday, anniversary, or just a simple gesture, we’ve got the perfect gift for everyone.
+    </p>
+    <button class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full shadow-2xl transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
+      ✨ Shop Now
+    </button>
+  </section>
+
+  <script>
+    // List of background images to cycle through
+    const backgroundImages = [
+      'image/colorful-festive-holiday-background-gift-boxes-generative-ai-339772065.webp',
+      'image/joyfull-christmas-gift-background-free-vector.jpg',
+      'image/gift-boxes-decorations-abstract-background-sales-gifts-colored-wallpaper-black-friday-296977864.webp',
+      'image/pngtree-black-friday-shopping-carnival-gift-box-background-image_547749.jpg',
+      'image/pngtree-atmospheric-bow-gift-box-gift-voucher-image_926748.jpg',
+    ];
+
+    let currentImageIndex = 0;
+
+    // Function to change the background image
+    function changeBackgroundImage() {
+      const heroSection = document.getElementById('hero-section');
+      heroSection.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+
+      // Move to the next image in the array
+      currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+    }
+
+    // Change background every 5 minutes (300,000 milliseconds)
+    setInterval(changeBackgroundImage, 5000);
+
+    // Set the initial background image when the page loads
+    window.onload = changeBackgroundImage;
+  </script>
+
+  <!-- Category Section (Horizontal Scroll) -->
+  <section class="px-4 py-10">
+    <h2 class="text-2xl font-bold text-center text-pink-700 mb-6">Choose a Category</h2>
+    <div class="flex overflow-x-auto space-x-5 pb-4 px-1 snap-x scroll-smooth">
+      <!-- Category Items with GIFs -->
+      <script>
+        const categories = [
+          { name: "Men", gif: "https://media.tenor.com/stwEJrjgtwYAAAAi/wave-hi.gif" },
+          { name: "Women", gif: "https://media.tenor.com/fKTW_94hK9UAAAAi/transparent-lift.gif" },
+          { name: "Husband", gif: "https://media1.tenor.com/m/_R5SfEZzf7kAAAAd/handsome-handsome-man.gif" },
+          { name: "Wife", gif: "https://media1.tenor.com/m/7F5KAKTuV6sAAAAC/theecards-theecards-greetings.gif" },
+          { name: "Mom", gif: "https://media1.tenor.com/m/EUqyr1DjEdUAAAAC/happy-mothers-day-mom-happy-moms-day.gif" },
+          { name: "Dad", gif: "https://media1.tenor.com/m/pytq451fr1UAAAAd/baby-nose-baby-nose-attack.gif" },
+          { name: "Sister", gif: "https://media.tenor.com/qH7Uk4k2JNwAAAAi/mocha-and-milk.gif" },
+          { name: "Brother", gif: "https://media.tenor.com/26VWQbnTPpAAAAAi/little-pills.gif" },
+          { name: "Girlfriend", gif: "https://media.tenor.com/LXmZ2bdPYlwAAAAi/caring.gif" },
+          { name: "Boyfriend", gif: "https://media.tenor.com/qrYeEh7fiKkAAAAi/bf-fnf.gif" },
+          { name: "Teenager", gif: "https://media1.tenor.com/m/U0pcpLZ6FbEAAAAC/sigh-eye-roll.gif" },
+          { name: "Babies", gif: "https://media1.tenor.com/m/peJkzB-KT5cAAAAd/wongyeekei-keikei.gif" }
+        ];
+
+        const categoryContainer = document.querySelector('.flex');
+        
+        categories.forEach(cat => {
+          const categoryItem = document.createElement('div');
+          categoryItem.classList.add('flex-shrink-0', 'flex', 'flex-col', 'items-center', 'snap-start');
+          categoryItem.setAttribute('data-aos', 'zoom-in');
+          
+          categoryItem.innerHTML = `
+            <div class="w-16 h-16 sm:w-24 sm:h-24 bg-white border-4 border-pink-300 rounded-full overflow-hidden shadow-md hover:scale-110 transition-transform duration-300">
+              <img src="${cat.gif}" alt="${cat.name}" class="w-full h-full object-cover" />
+            </div>
+            <span class="mt-2 text-xs sm:text-sm font-medium">${cat.name.toUpperCase()}</span>
+          `;
+          
+          categoryContainer.appendChild(categoryItem);
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- Gift Grid (Vertical Scroll) -->
+  <section class="py-8 px-4 sm:px-12">
+    <h2 class="text-2xl font-bold text-center text-pink-700 mb-6">Popular Gifts</h2>
+    <div class="overflow-y-auto h-96 sm:h-80 space-y-6" data-aos="fade-up">
+      <!-- Vertical Scroll Cards -->
+      <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transform transition-all duration-300">
+        <img src="https://via.placeholder.com/300x200" alt="Gift Card 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-pink-700">Gift Card 1</h3>
+          <p class="text-sm text-gray-500 mt-2">A wonderful gift for any occasion!</p>
+          <div class="mt-4">
+            <span class="text-xl font-bold text-pink-700">$50</span>
+            <button class="mt-2 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition duration-200">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transform transition-all duration-300">
+        <img src="https://via.placeholder.com/300x200" alt="Gift Card 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-pink-700">Gift Card 2</h3>
+          <p class="text-sm text-gray-500 mt-2">A perfect gift for your loved ones.</p>
+          <div class="mt-4">
+            <span class="text-xl font-bold text-pink-700">$75</span>
+            <button class="mt-2 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition duration-200">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- About Us Section -->
+<section id="about-us" class="bg-white py-16 px-6 md:px-12" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-pink-600 mb-6">About Us</h2>
+    <p class="text-gray-700 text-lg sm:text-xl leading-relaxed mb-4">
+      At <span class="font-bold text-pink-600">Dream Store</span>, we believe in the power of thoughtful gifting. Our curated collections are designed to make every occasion special. 
+      From personalized keepsakes to joyful surprises, we aim to spread smiles across miles. Whether it's a birthday, anniversary, or just because, we bring joy to your celebrations.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-8">
+      <div class="flex flex-col items-center text-center">
+        <div class="text-pink-600 text-4xl mb-4">
+          <i class="fas fa-gift"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Curated Gifts</h3>
+        <p class="text-gray-600">Handpicked gifts for every occasion, ensuring that your loved ones feel special and appreciated.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="text-pink-600 text-4xl mb-4">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Spread Joy</h3>
+        <p class="text-gray-600">Our goal is to bring joy to every doorstep. Every gift we offer is meant to create lasting memories and smiles.</p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="text-pink-600 text-4xl mb-4">
+          <i class="fas fa-shipping-fast"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Fast Delivery</h3>
+        <p class="text-gray-600">We understand the importance of timely delivery, ensuring your gift reaches its destination right on time.</p>
+      </div>
+    </div>
+    <p class="mt-6 text-gray-500 text-base">
+      Whether you're shopping for birthdays, anniversaries, or just because — we're here to help you make someone’s day memorable with a personalized gift that speaks from the heart.
+    </p>
+  </div>
+</section>
+
+
+<<!-- Footer Section -->
+<footer class="bg-gradient-to-r from-pink-500 to-pink-300 text-white py-10 px-6 md:px-12 mt-10">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
+    <!-- Company Info -->
+    <div>
+      <h3 class="text-2xl font-extrabold mb-2 text-pink-100">
+        Dream Store
+      </h3>
+      <p class="text-sm text-white/80">Making gifting magical ✨</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2 text-pink-100">Quick Links</h4>
+      <ul class="space-y-1 text-sm text-white/80">
+        <li><a href="#hero-section" class="flex items-center hover:underline">
+          <i class="fas fa-home mr-2"></i> Home
+        </a></li>
+        <li><a href="#about-us" class="flex items-center hover:underline">
+          <i class="fas fa-info-circle mr-2"></i> About Us
+        </a></li>
+        <li><a href="#gift-list" class="flex items-center hover:underline">
+          <i class="fas fa-gift mr-2"></i> Gifts
+        </a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2 text-pink-100">Contact</h4>
+      <p class="text-sm text-white/80 flex items-center justify-center sm:justify-start">
+        <i class="fas fa-envelope mr-2"></i> dreamstore@example.com
+      </p>
+      <p class="text-sm text-white/80 flex items-center justify-center sm:justify-start">
+        <i class="fas fa-phone-alt mr-2"></i> +91 98765 43210
+      </p>
+      <p class="text-sm text-white/80 flex items-center justify-center sm:justify-start">
+        <i class="fas fa-map-marker-alt mr-2"></i> VIT Bhopal, India
+      </p>
+    </div>
+  </div>
+
+  <div class="text-center mt-6 text-sm text-white/80">
+    &copy; 2025 Dream Store. All rights reserved.
+  </div>
+</footer>
+
+
+  <!-- Firebase Gift Loading Script (Fixed) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB5IlLZCcUnwsWQ6R360tMIR3pcMO3Cx1A",
+      authDomain: "vital-92722.firebaseapp.com",
+      databaseURL: "https://vital-92722-default-rtdb.firebaseio.com",
+      projectId: "vital-92722",
+      storageBucket: "vital-92722.appspot.com",
+      messagingSenderId: "141384962985",
+      appId: "1:141384962985:web:e18a741ef33058a75c6ab8",
+      measurementId: "G-EJ45EV7DKX"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function loadGifts() {
+      const giftList = document.getElementById("gift-list");
+      const querySnapshot = await getDocs(collection(db, "gifts"));
+      querySnapshot.forEach(doc => {
+        const gift = doc.data();
+        const card = document.createElement("div");
+        card.className = "bg-white rounded-2xl shadow-md p-4 flex flex-col justify-between transform transition duration-300 hover:shadow-xl hover:scale-105";
+        card.innerHTML = `
+          <img src="${gift.image}" alt="${gift.name}" class="w-full h-40 object-cover rounded-xl" />
+          <h2 class="mt-3 text-xl font-semibold text-gray-800">${gift.name}</h2>
+          <p class="text-gray-600 text-sm">${gift.description}</p>
+          <p class="text-pink-600 font-bold text-lg mt-1">₹${gift.price}</p>
+          <button class="mt-3 bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg transition duration-200 shadow" onclick="addToCart('${gift.name}', '${gift.price}')">Add to Cart</button>
+        `;
+        giftList.appendChild(card);
+      });
+    }
+
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Item added to cart!");
+    }
+
+    loadGifts();
+  </script>
+
+  
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
