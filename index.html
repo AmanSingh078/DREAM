@@ -114,52 +114,103 @@
       </script>
     </div>
   </section>
-  <!-- Special Deals Section -->
-<section id="special-deals" class="bg-gradient-to-br from-pink-200 to-pink-100 py-16 px-6 md:px-12">
-  <h2 class="text-3xl font-extrabold text-center text-pink-700 mb-8">Special Deals</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-    <!-- Wedding Deal -->
-    <div class="bg-white p-6 rounded-lg shadow-xl hover:scale-105 transition-all duration-300 transform">
-      <img src="https://via.placeholder.com/300x200?text=Wedding+Deals" alt="Wedding Deal" class="w-full h-48 object-cover rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-gray-800">Wedding Deals 💍</h3>
-      <p class="text-sm text-gray-600 mt-2">Celebrate love with our curated wedding gift sets. Perfect for every couple!</p>
-      <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition duration-200">Shop Now</button>
-    </div>
+  <section id="special-deals" class="bg-gradient-to-br from-pink-100 to-pink-50 py-16 px-4 md:px-12 relative">
+    <h2 class="text-3xl font-extrabold text-center text-pink-700 mb-8">Special Deals</h2>
+  
+    <!-- Navigation Arrows -->
+    <button id="scrollLeft" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg p-2 rounded-full hover:bg-pink-100">
+      <svg class="w-6 h-6 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+  
+    <button id="scrollRight" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg p-2 rounded-full hover:bg-pink-100">
+      <svg class="w-6 h-6 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  
+    <!-- Carousel -->
+    <div id="carousel" class="flex overflow-x-auto space-x-6 scroll-smooth snap-x pb-4">
+      
+      <!-- Card 1: Wedding -->
+      <div class="flex-shrink-0 w-72 bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 snap-start">
+        <img src="https://media.giphy.com/media/l3vR85PnGsBwu1PFK/giphy.gif" alt="Wedding" class="w-14 h-14 mb-3 rounded-full mx-auto">
+        <h3 class="text-xl font-bold text-center text-gray-800">Wedding Deals 💍</h3>
+        <p class="text-sm text-center text-gray-600 mt-2">Celebrate love with curated wedding gifts.</p>
+        <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition">Shop Now</button>
+      </div>
+  
+      <!-- Card 2: Eid -->
+      <div class="flex-shrink-0 w-72 bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 snap-start">
+        <img src="https://media.giphy.com/media/xUPGcguWZHRC2HyBRS/giphy.gif" alt="Eid" class="w-14 h-14 mb-3 rounded-full mx-auto">
+        <h3 class="text-xl font-bold text-center text-gray-800">Eid's Special 🌙</h3>
+        <p class="text-sm text-center text-gray-600 mt-2">Brighten Eid with meaningful gifts.</p>
+        <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition">Shop Now</button>
+      </div>
+  
+      <!-- Card 3: Friendship Day -->
+      <div class="flex-shrink-0 w-72 bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 snap-start">
+        <img src="https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif" alt="Friendship" class="w-14 h-14 mb-3 rounded-full mx-auto">
+        <h3 class="text-xl font-bold text-center text-gray-800">Friends Forever 👫</h3>
+        <p class="text-sm text-center text-gray-600 mt-2">Gifts that celebrate your closest bonds.</p>
+        <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition">Shop Now</button>
+      </div>
+      <!-- Card 6: Couple Gifts -->
+<div class="flex-shrink-0 w-72 bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 snap-start">
+  <img src="https://media.giphy.com/media/l0ExbR2VLzBHOg74I/giphy.gif" alt="Couple Gifts" class="w-14 h-14 mb-3 rounded-full mx-auto">
+  <h3 class="text-xl font-bold text-center text-gray-800">Couple Gifts ❤️</h3>
+  <p class="text-sm text-center text-gray-600 mt-2">Romantic picks for the perfect pair.</p>
+  <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition">Shop Now</button>
+</div>
+<!-- Card 7: Bouquet -->
+<div class="flex-shrink-0 w-72 bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 snap-start">
+  <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Bouquet" class="w-14 h-14 mb-3 rounded-full mx-auto">
+  <h3 class="text-xl font-bold text-center text-gray-800">Bouquet 🌸</h3>
+  <p class="text-sm text-center text-gray-600 mt-2">Fresh flowers for every occasion.</p>
+  <button class="mt-4 w-full py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 transition">Shop Now</button>
+</div>
 
-    <!-- Eid's Special -->
-    <div class="bg-white p-6 rounded-lg shadow-xl hover:scale-105 transition-all duration-300 transform">
-      <img src="https://via.placeholder.com/300x200?text=Eid+Special" alt="Eid’s Special" class="w-full h-48 object-cover rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-gray-800">Eid’s Special 🌙</h3>
-      <p class="text-sm text-gray-600 mt-2">Bring joy this Eid with thoughtful gifts for your loved ones.</p>
-      <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition duration-200">Shop Now</button>
-    </div>
 
-    <!-- Friends Deals -->
-    <div class="bg-white p-6 rounded-lg shadow-xl hover:scale-105 transition-all duration-300 transform">
-      <img src="https://via.placeholder.com/300x200?text=Friends+Deals" alt="Friends Deals" class="w-full h-48 object-cover rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-gray-800">Friends Deals 🎉</h3>
-      <p class="text-sm text-gray-600 mt-2">The perfect gifts for your friends – because friendship is forever!</p>
-      <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition duration-200">Shop Now</button>
+  
+      <!-- Card 4: Birthdays -->
+      <div class="flex-shrink-0 w-72 bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 snap-start">
+        <img src="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif" alt="Birthday" class="w-14 h-14 mb-3 rounded-full mx-auto">
+        <h3 class="text-xl font-bold text-center text-gray-800">Birthday Bliss 🎂</h3>
+        <p class="text-sm text-center text-gray-600 mt-2">Perfect presents for a perfect birthday!</p>
+        <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition">Shop Now</button>
+      </div>
+  
+      <!-- Card 5: Anniversary -->
+      <div class="flex-shrink-0 w-72 bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 snap-start">
+        <img src="https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif" alt="Anniversary" class="w-14 h-14 mb-3 rounded-full mx-auto">
+        <h3 class="text-xl font-bold text-center text-gray-800">Anniversary Magic 💞</h3>
+        <p class="text-sm text-center text-gray-600 mt-2">Celebrate milestones with meaningful surprises.</p>
+        <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition">Shop Now</button>
+      </div>
+  
     </div>
-
-    <!-- Couple Deals -->
-    <div class="bg-white p-6 rounded-lg shadow-xl hover:scale-105 transition-all duration-300 transform">
-      <img src="https://via.placeholder.com/300x200?text=Couple+Deals" alt="Couple Deals" class="w-full h-48 object-cover rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-gray-800">Couple Deals ❤️</h3>
-      <p class="text-sm text-gray-600 mt-2">Surprise your significant other with a thoughtful and romantic gift.</p>
-      <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition duration-200">Shop Now</button>
-    </div>
-
-    <!-- Bouquet Deals -->
-    <div class="bg-white p-6 rounded-lg shadow-xl hover:scale-105 transition-all duration-300 transform">
-      <img src="https://via.placeholder.com/300x200?text=Bouquet" alt="Bouquet Deals" class="w-full h-48 object-cover rounded-lg mb-4">
-      <h3 class="text-xl font-semibold text-gray-800">Bouquet 🌸</h3>
-      <p class="text-sm text-gray-600 mt-2">Brighten someone's day with a beautiful bouquet of flowers!</p>
-      <button class="mt-4 w-full py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition duration-200">Shop Now</button>
-    </div>
-  </div>
-</section>
-
+  </section>
+  
+  <script>
+    const carousel = document.getElementById("carousel");
+    const scrollLeft = document.getElementById("scrollLeft");
+    const scrollRight = document.getElementById("scrollRight");
+  
+    scrollLeft.addEventListener("click", () => {
+      carousel.scrollBy({ left: -300, behavior: "smooth" });
+    });
+  
+    scrollRight.addEventListener("click", () => {
+      carousel.scrollBy({ left: 300, behavior: "smooth" });
+    });
+  
+    // Auto-scroll every 4 seconds
+    setInterval(() => {
+      carousel.scrollBy({ left: 300, behavior: "smooth" });
+    }, 4000);
+  </script>
+  
 
   <!-- Gift Grid (Vertical Scroll) -->
   <section class="py-8 px-4 sm:px-12">
